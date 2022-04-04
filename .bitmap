@@ -39,11 +39,23 @@
         "mainFile": "index.ts",
         "rootDir": "looper/generators/react-wkspc"
     },
+    "providers/theme": {
+        "scope": "",
+        "version": "",
+        "mainFile": "index.ts",
+        "rootDir": "looper/providers/theme"
+    },
     "ui/dummy": {
         "scope": "",
         "version": "",
         "mainFile": "index.ts",
-        "rootDir": "looper/ui/dummy"
+        "rootDir": "looper/ui/dummy",
+        "config": {
+            "ashwanth1109.looper/envs/bitgen-react": {},
+            "teambit.envs/envs": {
+                "env": "ashwanth1109.looper/envs/bitgen-react"
+            }
+        }
     },
     "$schema-version": "14.9.0"
 }
