@@ -3,20 +3,23 @@
 To create a new workspace with this template, run the following command:
 
 ```shell
-bit new react-wkspc <new-workspace-name> --aspect ashwanth1109.looper/react-wkspc
-
+bit new react-wkspc <new-wkspc-name> --aspect ashwanth1109.looper/generators/react-wkspc
+# Example
+bit new react-wkspc test-wkspc --aspect ashwanth1109.looper/generators/react-wkspc
 # local debugging only
-bit new react-wkspc <new-workspace-name> --aspect ashwanth1109.looper/react-wkspc --load-from <path-to-root-of-workspace>
+bit new react-wkspc <new-wkspc-name> --aspect ashwanth1109.looper/generators/react-wkspc --load-from <path-to-root-of-wkspc>
 ```
 
 Your newly created workspace has the `tiui component template` available out of the box.
 You can see this template using the following command:
+
 ```shell
 bit templates
 # You should see "tiui-component (TI UI component template)" in the list
 ```
 
 To create a new react component using the TI UI standard, run the following command:
+
 ```shell
 bit create tiui-component ui/button
 ```
