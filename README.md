@@ -21,7 +21,7 @@ bit templates
 To create a new react component using the TI UI standard, run the following command:
 
 ```shell
-bit create tiui-component ui/button
+bit create react-comp ui/button
 ```
 
 To tag a component,

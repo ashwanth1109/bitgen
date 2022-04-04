@@ -1,7 +1,7 @@
 /**
  * this is the main configuration file of your bit workspace.
  * for full documentation, please see: https://harmony-docs.bit.dev/workspace/configurations
- **/{
+ **/ {
   "$schema": "https://static.bit.dev/teambit/schemas/schema.json",
   /**
    * main configuration of the Bit workspace.
@@ -70,31 +70,35 @@
    **/
   "teambit.workspace/variants": {
     /**
-       * configures all components with namespaces 'ui', 'blocks', 'pages' and 'themes'
-       * to use the default React development environment.
-       *
-      */
+     * configures all components with namespaces 'ui', 'blocks', 'pages' and 'themes'
+     * to use the default React development environment.
+     *
+     */
     "{ui/**}, {blocks/**}, {pages/**}, {themes/**}": {
       "teambit.react/react": {}
     },
     /**
-       * configures components with namespaces 'entities', 'modules' and 'functions' to use the 
-       * default NodeJS dev environment.
-      */
+     * configures components with namespaces 'entities', 'modules' and 'functions' to use the
+     * default NodeJS dev environment.
+     */
     "{entities/**}, {modules/**}, {functions/**}": {
       "teambit.harmony/node": {}
     },
     /**
-       * configures components with namespace 'content' to use the MDX dev environment.
-      */
+     * configures components with namespace 'content' to use the MDX dev environment.
+     */
     "{content/**}": {
       "teambit.mdx/mdx": {}
     },
     /**
-       * configures components with namespaces 'envs' and 'aspects' to use the default Aspect development environment.
-      */
+     * configures components with namespaces 'envs' and 'aspects' to use the default Aspect development environment.
+     */
     "{envs/**}, {aspects/**}, {apps/**}": {
       "teambit.harmony/aspect": {}
     }
-  }
+  },
+  "teambit.generator/generator": {
+    "aspects": ["ashwanth1109.looper/generators/react-comp"]
+  },
+  "ashwanth1109.looper/generators/react-comp": {}
 }
