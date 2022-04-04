@@ -1,0 +1,9 @@
+import React from 'react';
+import { render } from '@testing-library/react';
+import { BasicTIUI_NAME_PASCAL_CASE } from './TIUI_NAME.composition';
+
+it('should render with the correct text', () => {
+  const { getByText } = render(<BasicTIUI_NAME_PASCAL_CASE />);
+  const rendered = getByText('Increase');
+  expect(rendered).toBeTruthy();
+});

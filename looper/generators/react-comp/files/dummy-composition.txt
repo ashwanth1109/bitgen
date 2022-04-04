@@ -1,0 +1,6 @@
+import React from 'react';
+import { TIUI_NAME_PASCAL_CASE } from './TIUI_NAME';
+
+export const BasicTIUI_NAME_PASCAL_CASE = () => {
+  return <TIUI_NAME_PASCAL_CASE shouldIncrement={true} />;
+};

@@ -1,0 +1,22 @@
+import React from 'react';
+import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { screen, userEvent } from '@storybook/testing-library';
+
+import { TIUI_NAME_PASCAL_CASE, TIUI_NAME_PASCAL_CASEProps } from './TIUI_NAME';
+
+export default {
+  title: 'Components/TIUI_NAME_PASCAL_CASE',
+  component: TIUI_NAME_PASCAL_CASE,
+} as ComponentMeta<typeof TIUI_NAME_PASCAL_CASE>;
+
+const Template: ComponentStory<typeof TIUI_NAME_PASCAL_CASE> = (args: TIUI_NAME_PASCAL_CASEProps) => (
+  <TIUI_NAME_PASCAL_CASE {...args} />
+);
+
+export const DefaultWithClick: ComponentStory<typeof TIUI_NAME_PASCAL_CASE> = Template.bind({});
+DefaultWithClick.args = {
+  shouldIncrement: true,
+};
+DefaultWithClick.play = async ({ args, canvasElement }: any) => {
+  await userEvent.click(screen.getByRole('button', { name: 'Admins' }));
+};

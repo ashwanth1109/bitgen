@@ -1,0 +1,2 @@
+export { TIUI_NAME_PASCAL_CASE } from './TIUI_NAME';
+export type { TIUI_NAME_PASCAL_CASEProps } from './TIUI_NAME';

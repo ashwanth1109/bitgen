@@ -9,6 +9,18 @@
  */
 
 {
+    "generators/react-comp": {
+        "scope": "",
+        "version": "",
+        "mainFile": "index.ts",
+        "rootDir": "looper/generators/react-comp",
+        "config": {
+            "teambit.harmony/aspect": {},
+            "teambit.envs/envs": {
+                "env": "teambit.harmony/aspect"
+            }
+        }
+    },
     "generators/react-wkspc": {
         "scope": "ashwanth1109.looper",
         "version": "0.0.2",
