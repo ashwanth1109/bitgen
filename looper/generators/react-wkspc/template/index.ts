@@ -2,8 +2,8 @@ import { WorkspaceContext, WorkspaceTemplate } from '@teambit/generator';
 import Files, { workspaceConfig } from './files';
 
 export const workspaceTemplate: WorkspaceTemplate = {
-  name: 'template-example',
-  description: 'demonstration of a workspace template',
+  name: 'react-wkspc',
+  description: 'create a react workspace',
   generateFiles: async (context: WorkspaceContext) => [
     {
       relativePath: 'workspace.jsonc',

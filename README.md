@@ -1,9 +1,35 @@
-# Welcome to your Bit Workspace
+# BitGen
 
-To get started straight away run `bit start` and open [localhost:3000](http://localhost:3000). It may take a while to build the first time you run this command as it is building the whole User Interface for your development environment.
+To create a new workspace with this template, run the following command:
 
-```bash
-bit start
+```shell
+bit new react-wkspc <new-workspace-name> --aspect ashwanth1109.looper/react-wkspc
+
+# local debugging only
+bit new react-wkspc <new-workspace-name> --aspect ashwanth1109.looper/react-wkspc --load-from <path-to-root-of-workspace>
+```
+
+Your newly created workspace has the `tiui component template` available out of the box.
+You can see this template using the following command:
+```shell
+bit templates
+# You should see "tiui-component (TI UI component template)" in the list
+```
+
+To create a new react component using the TI UI standard, run the following command:
+```shell
+bit create tiui-component ui/button
+```
+
+To tag a component,
+
+```shell
+bit tag --all --soft --message "add dummy component with env"
+
+# CICD will persist these changes for you, using the command:
+# bit tag --persist
+# CICD also exports these components with: bit export
+# And then commits the .bitmap to the repo
 ```
 
 ## What's included
@@ -15,18 +41,6 @@ This is the main configuration file of your bit workspace. Here you can modify t
 - **.bitmap**
 
 This is an auto-generated file and includes the mapping of your components. There is one component included here. In order to remove this component you can run the following command.
-
-
-- **Demo Components**
-
-A folder (unless the --empty flag was used) containing demo components are included in this workspace. These components are used to demonstrate the different features of Bit. If you would like to remove these components you can run the following command.
-
-```jsx
-bit remove "ui/*" --delete files
-```
-
-This removes the components from the bitmap as well as removes the files.
-
 
 - **.gitignore**
 
