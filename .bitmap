@@ -9,6 +9,18 @@
  */
 
 {
+    "envs/bitgen-react": {
+        "scope": "",
+        "version": "",
+        "mainFile": "index.ts",
+        "rootDir": "looper/envs/bitgen-react",
+        "config": {
+            "teambit.envs/env": {},
+            "teambit.envs/envs": {
+                "env": "teambit.envs/env"
+            }
+        }
+    },
     "generators/react-comp": {
         "scope": "",
         "version": "",
@@ -26,6 +38,12 @@
         "version": "0.0.2",
         "mainFile": "index.ts",
         "rootDir": "looper/generators/react-wkspc"
+    },
+    "ui/dummy": {
+        "scope": "",
+        "version": "",
+        "mainFile": "index.ts",
+        "rootDir": "looper/ui/dummy"
     },
     "$schema-version": "14.9.0"
 }
