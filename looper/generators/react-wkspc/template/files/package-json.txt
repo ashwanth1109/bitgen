@@ -1,0 +1,7 @@
+{
+  "name": "tiui-template",
+  "version": "0.0.1",
+  "scripts": {
+    "storybook": "start-storybook -p 3001 -c .storybook"
+  }
+}

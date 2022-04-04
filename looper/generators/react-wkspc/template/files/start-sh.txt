@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+bit import
+bit install
+bit compile
+bit link
+bit start

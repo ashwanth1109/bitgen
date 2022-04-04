@@ -9,5 +9,17 @@
  */
 
 {
+    "generators/react-wkspc": {
+        "scope": "",
+        "version": "",
+        "mainFile": "index.ts",
+        "rootDir": "looper/generators/react-wkspc",
+        "config": {
+            "teambit.harmony/aspect": {},
+            "teambit.envs/envs": {
+                "env": "teambit.harmony/aspect"
+            }
+        }
+    },
     "$schema-version": "14.9.0"
 }
