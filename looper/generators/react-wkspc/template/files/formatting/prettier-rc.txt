@@ -1,4 +1,4 @@
-const baseConfig = require('@tiui/remote.configs.tiui-formatter');
+const baseConfig = require('@ashwanth1109/looper.formatter');
 module.exports = {
   ...baseConfig,
 };

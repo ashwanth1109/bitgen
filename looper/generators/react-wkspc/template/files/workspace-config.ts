@@ -11,7 +11,7 @@ export async function workspaceConfig({
   const configParsed = await getWorkspaceConfigTemplateParsed();
   configParsed['teambit.workspace/workspace'].name = name;
   configParsed['teambit.workspace/workspace'].defaultScope =
-    defaultScope || 'tiui.remote';
+    defaultScope || 'ashwanth1109.looper';
   configParsed['teambit.workspace/variants'] = {
     '*': {
       'teambit.react/react': {},

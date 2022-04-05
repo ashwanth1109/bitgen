@@ -33,9 +33,9 @@ chmod +x start.sh
 ./start.sh
 ```
 
-- ### **generators/tiui-react**
+- ### **generators/react-comp**
 
-Your newly created workspace has the `tiui-react` component template available out of the box.
+Your newly created workspace has the `react-comp` component template available out of the box.
 You can see this template using the following command:
 
 ```shell
@@ -52,7 +52,7 @@ bit create react-comp ui/button
 - ### **.storybook**
 
 This is the configuration required for storybook to run.
-It also installs other add-ons required by the tiui template.
+It also installs other add-ons required by the stories.
 
 To start your storybook server
 

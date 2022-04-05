@@ -10,8 +10,8 @@ class Files {
       path.resolve(__dirname, `./${fileName}.txt`),
       'utf8',
     );
-    data = data.replace(/TIUI_NAME_PASCAL_CASE/g, Files.context.namePascalCase);
-    data = data.replace(/TIUI_NAME/g, Files.context.name);
+    data = data.replace(/BITGEN_NAME_PASCAL_CASE/g, Files.context.namePascalCase);
+    data = data.replace(/BITGEN_NAME/g, Files.context.name);
     return data;
   }
 

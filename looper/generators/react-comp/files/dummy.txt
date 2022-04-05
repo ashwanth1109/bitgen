@@ -1,13 +1,13 @@
 import React from 'react';
 
-export type TIUI_NAME_PASCAL_CASEProps = {
+export type BITGEN_NAME_PASCAL_CASEProps = {
   /**
    * whether button to increment or decrement should be shown
    */
   shouldIncrement: boolean;
 };
 
-export function TIUI_NAME_PASCAL_CASE({ shouldIncrement }: TIUI_NAME_PASCAL_CASEProps) {
+export function BITGEN_NAME_PASCAL_CASE({ shouldIncrement }: BITGEN_NAME_PASCAL_CASEProps) {
   const [count, setCount] = React.useState(0);
 
   const handleIncrement = () => {
