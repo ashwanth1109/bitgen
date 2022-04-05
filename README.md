@@ -5,9 +5,9 @@
 To create a new workspace with this template, run the following command:
 
 ```shell
-bit new react-wkspc <new-workspace-name> --aspect ashwanth1109.looper/generators/react-wkspc
+bit new bitgen <new-workspace-name> --aspect ashwanth1109.looper/generators/react-wkspc
 # Example
-bit new react-wkspc test-wkspc --aspect ashwanth1109.looper/generators/react-wkspc
+bit new bitgen test-wkspc --aspect ashwanth1109.looper/generators/react-wkspc
 ```
 
 ## What's included

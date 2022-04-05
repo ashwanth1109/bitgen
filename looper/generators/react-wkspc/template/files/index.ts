@@ -73,7 +73,7 @@ class Files {
         content: Files.Read('testing/jest-setup'),
       },
       {
-        relativePath: 'remote/storyshots/index.spec.ts',
+        relativePath: 'looper/storyshots/index.spec.ts',
         content: Files.Read('testing/storyshots'),
       },
       // Scripts
