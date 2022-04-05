@@ -8,7 +8,7 @@ This workspace uses [Bit](https://bit.dev/) to manage component packaging and di
 npm i -g @teambit/bvm && bvm install && export PATH=$HOME/bin:$PATH
 ```
 
-2. Import the components from the remote scope
+2. Import the components from the looper scope
 ```bash
 bit import
 bit install
@@ -24,7 +24,7 @@ bit start
 
 4. Creating your first component. Create a new branch, and then
 ```bash
-bit create react-component -s tiui.remote -n <your namespace> <component name>
+bit create react-component -s tiui.looper -n <your namespace> <component name>
 ```
 Follow this naming convention for the namespace
 - For components that are product specific start the namespace with the product name eg: gfi/ui/
@@ -80,8 +80,8 @@ pnpm lint:q # show only errors
 ```bash
 bit remove <component> # e.g. bit remove ui/button
 
-# to remove from remote
-bit remove <component> --remote
+# to remove from looper
+bit remove <component> --looper
 
 ## Resolving incompatibilities between bit and npm
 This command gives you a list of npm packages and their versions

@@ -10,52 +10,40 @@
 
 {
     "envs/bitgen-react": {
-        "scope": "",
-        "version": "",
+        "scope": "ashwanth1109.looper",
+        "version": "0.0.1",
         "mainFile": "index.ts",
-        "rootDir": "looper/envs/bitgen-react",
-        "config": {
-            "teambit.envs/env": {},
-            "teambit.envs/envs": {
-                "env": "teambit.envs/env"
-            }
-        }
+        "rootDir": "looper/envs/bitgen-react"
+    },
+    "formatter": {
+        "scope": "ashwanth1109.looper",
+        "version": "0.0.1",
+        "mainFile": "index.ts",
+        "rootDir": "looper/configs/formatter"
     },
     "generators/react-comp": {
-        "scope": "",
-        "version": "",
-        "mainFile": "index.ts",
-        "rootDir": "looper/generators/react-comp",
-        "config": {
-            "teambit.harmony/aspect": {},
-            "teambit.envs/envs": {
-                "env": "teambit.harmony/aspect"
-            }
-        }
-    },
-    "generators/react-wkspc": {
         "scope": "ashwanth1109.looper",
         "version": "0.0.2",
         "mainFile": "index.ts",
+        "rootDir": "looper/generators/react-comp"
+    },
+    "generators/react-wkspc": {
+        "scope": "ashwanth1109.looper",
+        "version": "0.0.5",
+        "mainFile": "index.ts",
         "rootDir": "looper/generators/react-wkspc"
     },
-    "providers/theme": {
-        "scope": "",
-        "version": "",
+    "linter": {
+        "scope": "ashwanth1109.looper",
+        "version": "0.0.1",
         "mainFile": "index.ts",
-        "rootDir": "looper/providers/theme"
+        "rootDir": "looper/configs/linter"
     },
     "ui/dummy": {
-        "scope": "",
-        "version": "",
+        "scope": "ashwanth1109.looper",
+        "version": "0.0.1",
         "mainFile": "index.ts",
-        "rootDir": "looper/ui/dummy",
-        "config": {
-            "ashwanth1109.looper/envs/bitgen-react": {},
-            "teambit.envs/envs": {
-                "env": "ashwanth1109.looper/envs/bitgen-react"
-            }
-        }
+        "rootDir": "looper/ui/dummy"
     },
     "$schema-version": "14.9.0"
 }

@@ -1,0 +1,4 @@
+const baseConfig = require('@ashwanth1109/looper.formatter');
+module.exports = {
+  ...baseConfig,
+};

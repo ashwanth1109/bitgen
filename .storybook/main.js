@@ -1,5 +1,5 @@
 module.exports = {
-  stories: ['../looper/**/*.stories.@(js|jsx|ts|tsx|mdx)'],
+  stories: ['../remote/**/*.stories.@(js|jsx|ts|tsx|mdx)'],
   addons: [
     '@storybook/addon-links',
     '@storybook/addon-essentials',

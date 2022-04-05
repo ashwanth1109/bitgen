@@ -1,18 +1,18 @@
 ---
-description: A TIUI_NAME_PASCAL_CASE component.
+description: A BITGEN_NAME_PASCAL_CASE component.
 ---
 
-import { TIUI_NAME_PASCAL_CASE } from './TIUI_NAME';
+import { BITGEN_NAME_PASCAL_CASE } from './BITGEN_NAME';
 
 A component that does something special and renders text in a div.
 
 ### Component usage
 ```js
-<TIUI_NAME_PASCAL_CASE shouldIncrement={true} />
+<BITGEN_NAME_PASCAL_CASE shouldIncrement={true} />
 ```
 
 ### Render hello world!
 
 ```js live
-<TIUI_NAME_PASCAL_CASE shouldIncrement={true} />
+<BITGEN_NAME_PASCAL_CASE shouldIncrement={true} />
 ```

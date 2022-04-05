@@ -1,2 +1,2 @@
-export { TIUI_NAME_PASCAL_CASE } from './TIUI_NAME';
-export type { TIUI_NAME_PASCAL_CASEProps } from './TIUI_NAME';
+export { BITGEN_NAME_PASCAL_CASE } from './BITGEN_NAME';
+export type { BITGEN_NAME_PASCAL_CASEProps } from './BITGEN_NAME';

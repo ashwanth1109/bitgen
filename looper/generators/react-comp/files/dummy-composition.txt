@@ -1,6 +1,6 @@
 import React from 'react';
-import { TIUI_NAME_PASCAL_CASE } from './TIUI_NAME';
+import { BITGEN_NAME_PASCAL_CASE } from './BITGEN_NAME';
 
-export const BasicTIUI_NAME_PASCAL_CASE = () => {
-  return <TIUI_NAME_PASCAL_CASE shouldIncrement={true} />;
+export const BasicBITGEN_NAME_PASCAL_CASE = () => {
+  return <BITGEN_NAME_PASCAL_CASE shouldIncrement={true} />;
 };
