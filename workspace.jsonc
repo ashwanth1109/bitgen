@@ -1,7 +1,7 @@
 /**
  * this is the main configuration file of your bit workspace.
  * for full documentation, please see: https://harmony-docs.bit.dev/workspace/configurations
- **/ {
+ **/{
   "$schema": "https://static.bit.dev/teambit/schemas/schema.json",
   /**
    * main configuration of the Bit workspace.
@@ -39,6 +39,7 @@
     "packageManager": "teambit.dependencies/pnpm",
     "policy": {
       "dependencies": {
+        "@ashwanth1109/looper.providers.theme": "0.0.1",
         "styled-components": "5.3.5"
       },
       "peerDependencies": {
@@ -113,7 +114,9 @@
     }
   },
   "teambit.generator/generator": {
-    "aspects": ["ashwanth1109.looper/generators/react-comp"]
+    "aspects": [
+      "ashwanth1109.looper/generators/react-comp"
+    ]
   },
   "ashwanth1109.looper/generators/react-comp": {}
 }
