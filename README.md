@@ -46,7 +46,7 @@ bit templates
 To create a new react component using the bit-gen standard, run the following command:
 
 ```shell
-bit create tiui-react ui/button
+bit create react-comp ui/button
 ```
 
 - ### **.storybook**

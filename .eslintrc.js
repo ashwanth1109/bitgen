@@ -1,3 +1,3 @@
 module.exports = {
-  extends: [require.resolve('@tiui/remote.configs.tiui-linter')],
+  extends: [require.resolve('@ashwanth1109/looper.linter')],
 };

@@ -39,8 +39,7 @@
     "packageManager": "teambit.dependencies/pnpm",
     "policy": {
       "dependencies": {
-        "@teambit/harmony": "0.2.11",
-        "classnames": "2.3.1"
+        "styled-components": "5.3.5"
       },
       "peerDependencies": {
         "@babel/preset-env": "7.16.8",

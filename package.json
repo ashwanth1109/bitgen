@@ -6,9 +6,9 @@
     "build:story": "build-storybook",
     "test": "jest",
     "test:watch": "jest --watchAll",
-    "lint": "eslint remote --ext .ts,.tsx -c .eslintrc.js",
-    "lint:q": "eslint remote --ext .ts,.tsx --quiet",
-    "format:check": "prettier --check remote --config .prettierrc.js",
-    "format": "prettier --write remote --config .prettierrc.js"
+    "lint": "eslint looper --ext .ts,.tsx -c .eslintrc.js",
+    "lint:q": "eslint looper --ext .ts,.tsx --quiet",
+    "format:check": "prettier --check looper --config .prettierrc.js",
+    "format": "prettier --write looper --config .prettierrc.js"
   }
 }
