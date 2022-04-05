@@ -21,6 +21,12 @@
             }
         }
     },
+    "formatter": {
+        "scope": "",
+        "version": "",
+        "mainFile": "index.ts",
+        "rootDir": "looper/configs/formatter"
+    },
     "generators/react-comp": {
         "scope": "",
         "version": "",
@@ -38,6 +44,12 @@
         "version": "0.0.2",
         "mainFile": "index.ts",
         "rootDir": "looper/generators/react-wkspc"
+    },
+    "linter": {
+        "scope": "",
+        "version": "",
+        "mainFile": "index.ts",
+        "rootDir": "looper/configs/linter"
     },
     "providers/theme": {
         "scope": "",

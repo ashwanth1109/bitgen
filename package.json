@@ -1,5 +1,5 @@
 {
-  "name": "TIUI_NAME",
+  "name": "bit-gen",
   "version": "0.0.1",
   "scripts": {
     "story": "start-storybook -p 3001 -c .storybook",

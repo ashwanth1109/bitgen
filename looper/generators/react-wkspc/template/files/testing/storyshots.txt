@@ -1,0 +1,33 @@
+import initStoryshots, {
+  Stories2SnapsConverter,
+} from '@storybook/addon-storyshots';
+import { render } from '@testing-library/react';
+
+import 'jest-styled-components';
+
+initStoryshots({
+  asyncJest: true,
+  test: async ({ story, context, done }) => {
+    try {
+      const converter = new Stories2SnapsConverter();
+      const snapshotFilename = converter.getSnapshotFileName(context);
+
+      // To run a story individually, you can enable the following code
+      /*if (story.componentId !== 'ui-base-modal') {
+              done!();
+              return;
+            }*/
+
+      const jsx = story.render();
+      const { unmount, baseElement } = await render(jsx);
+      if (snapshotFilename) {
+        expect(baseElement).toMatchSpecificSnapshot(snapshotFilename);
+      }
+
+      unmount();
+      done!();
+    } catch (e) {
+      console.log('Error');
+    }
+  },
+});
