@@ -61,14 +61,14 @@ export async function workspaceConfig({
       '@babel/preset-typescript': '7.16.7',
 
       // Custom configs
-      '@tiui/remote.configs.tiui-linter': '^0.0.1',
-      '@tiui/remote.configs.tiui-formatter': '^0.0.1',
+      '@ashwanth1109/looper.linter': '^0.0.1',
+      '@ashwanth1109/looper.formatter': '^0.0.1',
     },
   };
   configParsed['teambit.generator/generator'] = {
-    aspects: ['tiui.remote/generators/tiui-templates'],
+    aspects: ['ashwanth1109.looper/generators/react-comp'],
   };
-  configParsed['tiui.remote/generators/tiui-templates'] = {};
+  configParsed['ashwanth1109.looper/generators/react-comp'] = {};
 
   return stringifyWorkspaceConfig(configParsed);
 }
