@@ -23,13 +23,13 @@
     },
     "generators/react-comp": {
         "scope": "ashwanth1109.looper",
-        "version": "0.0.1",
+        "version": "0.0.2",
         "mainFile": "index.ts",
         "rootDir": "looper/generators/react-comp"
     },
     "generators/react-wkspc": {
         "scope": "ashwanth1109.looper",
-        "version": "0.0.4",
+        "version": "0.0.5",
         "mainFile": "index.ts",
         "rootDir": "looper/generators/react-wkspc"
     },
