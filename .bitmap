@@ -29,7 +29,7 @@
     },
     "generators/react-wkspc": {
         "scope": "ashwanth1109.looper",
-        "version": "0.0.5",
+        "version": "0.0.6",
         "mainFile": "index.ts",
         "rootDir": "looper/generators/react-wkspc"
     },
