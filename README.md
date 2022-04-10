@@ -92,3 +92,14 @@ Along with jest testing for any other spec files you may contain.
 pnpm test
 pnpm test:watch # in watch mode
 ```
+
+- ### **.github**
+
+CICD comes out of the box with bitgen.
+However, you need to set your BIT_TOKEN. To get the value for this, you need to login and get the config
+```shell
+bit login
+bit config get user.token
+```
+
+Once you have this value, create a GitHub secret called "BIT_TOKEN".
