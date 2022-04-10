@@ -1,0 +1,12 @@
+{
+  "stagedComponents": [],
+  "componentsWithIssues": [],
+  "importPendingComponents": [],
+  "invalidComponents": [],
+  "outdatedComponents": [],
+  "mergePendingComponents": [],
+  "componentsDuringMergeState": [],
+  "componentsWithIndividualFiles": [],
+  "componentsWithTrackDirs": [],
+  "snappedComponents": []
+}
