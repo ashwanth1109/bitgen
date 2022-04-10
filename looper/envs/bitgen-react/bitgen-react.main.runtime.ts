@@ -41,8 +41,8 @@ export class BitgenReactMain {
           (config) => {
             config.setRule('no-console', ['error']);
             return config;
-          }
-        ]
+          },
+        ],
       }),
 
       /**
@@ -56,8 +56,8 @@ export class BitgenReactMain {
           (config) => {
             config.setKey('tabWidth', 2);
             return config;
-          }
-        ]
+          },
+        ],
       }),
 
       /**
@@ -68,8 +68,8 @@ export class BitgenReactMain {
       react.overrideDependencies({
         devDependencies: {
           // '@types/react': '17.0.3'
-        }
-      })
+        },
+      }),
     ]);
     envs.registerEnv(templatesReactEnv);
     return new BitgenReactMain();

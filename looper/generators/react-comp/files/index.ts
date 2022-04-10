@@ -8,9 +8,12 @@ class Files {
   public static Read(fileName: string): string {
     let data = fs.readFileSync(
       path.resolve(__dirname, `./${fileName}.txt`),
-      'utf8',
+      'utf8'
     );
-    data = data.replace(/BITGEN_NAME_PASCAL_CASE/g, Files.context.namePascalCase);
+    data = data.replace(
+      /BITGEN_NAME_PASCAL_CASE/g,
+      Files.context.namePascalCase
+    );
     data = data.replace(/BITGEN_NAME/g, Files.context.name);
     return data;
   }
