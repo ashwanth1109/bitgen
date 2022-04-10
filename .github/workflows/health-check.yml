@@ -1,0 +1,80 @@
+name: Run health check
+
+# Run health check pipeline only on main
+on:
+  push:
+    branches: [main]
+
+jobs:
+  health-check-suite:
+    runs-on: ubuntu-latest
+    if: "!contains(github.event.head_commit.message, 'skip-ci')"
+    env:
+      BIT_TOKEN: ${{secrets.BIT_TOKEN}}
+      NODE_OPTIONS: --max-old-space-size=10096
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node 16.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: '16.x'
+      - name: Cache node modules
+        uses: actions/cache@v3
+        env:
+          cache-name: cache-node-modules
+        with:
+          # npm cache files are stored in `~/.npm` on Linux/macOS
+          path: ~/.npm
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/pnpm-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+      - name: Install Bit Version Manager
+        run: npm i -g @teambit/bvm
+      - name: Install latest Bit
+        run: bvm install
+      - name: Add bvm bin folder to path
+        run: echo "$HOME/bin" >> $GITHUB_PATH
+      - name: Initialize pnpm
+        uses: pnpm/action-setup@v2.0.1
+        with:
+          version: 6.27.0
+      - name: Bit config
+        run: |
+          bit -v
+          bit config set interactive false
+          bit config set analytics_reporting false
+          bit config set anonymous_reporting false
+          bit config set no_warnings true
+          bit config set error_reporting true
+          bit config set user.token $BIT_TOKEN
+          bit config
+      - name: Import remote components
+        run: bit import
+      - name: Install dependencies
+        run: bit install
+      - name: Compile and link components
+        run: bit compile && bit link
+      - name: Check component status
+        run: |
+          bit status -j
+          res=$(jq --argfile a <(bit status -j | jq 'del(.autoTagPendingComponents,.softTaggedComponents,.modifiedComponent,.newComponents)') --argfile b .bit-status-desired.json -n '($a | (.. | arrays) |= sort) as $a | ($b | (.. | arrays) |= sort) as $b | $a == $b')
+          if [ $res = "true" ]; then echo "Status is fine"; exit 0; fi
+          echo "Status didn't match the desired state. Some components were found with outstanding actions."
+          exit 1
+      - name: Check build status
+        run: bit build
+      - name: Check storybook build status
+        run: pnpm build:story
+      - name: Check lint status
+        run: pnpm lint
+      - name: Check formatting status
+        run: pnpm format:check
+      - name: Run tests
+        run: pnpm test
+      - name: Upload debug logs
+        uses: actions/upload-artifact@v2
+        with:
+          name: debug-log
+          path: ~/Library/Caches/Bit/logs

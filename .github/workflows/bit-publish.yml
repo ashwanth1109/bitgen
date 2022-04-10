@@ -1,0 +1,60 @@
+# IMPORTANT NOTE:
+# You need to set BIT_TOKEN as a github repository secret for CICD to work
+name: Publish artifacts
+
+# Run publish pipeline only on main
+on:
+  push:
+    branches: [main]
+
+jobs:
+  publish-artifacts:
+    runs-on: ubuntu-latest
+    if: "!contains(github.event.head_commit.message, 'skip-ci')"
+
+    env:
+      BIT_TOKEN: ${{secrets.BIT_TOKEN}}
+      NODE_OPTIONS: --max-old-space-size=10096
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        name: Use Node.js 16
+        with:
+          node-version: '16.14.0'
+      - name: Install Bit Version Manager
+        run: npm i -g @teambit/bvm
+      - name: Install latest Bit version
+        run: bvm install
+      - name: add bvm bin folder to path
+        run: echo "$HOME/bin" >> $GITHUB_PATH
+      - name: Bit config
+        run: |
+          bit -v
+          bit config set interactive false
+          bit config set analytics_reporting false
+          bit config set anonymous_reporting false
+          bit config set no_warnings true
+          bit config set error_reporting true
+          bit config set user.token $BIT_TOKEN
+          bit config
+      - name: Install packages using bit
+        run: bit install
+      - name: Hard-tag pending components
+        run: |
+          bit compile
+          bit link
+          bit status
+          bit tag --persist
+          bit status
+      - name: Export components
+        run: |
+          bit export
+          bit status
+      - name: Commit changes made to .bitmap
+        run: |
+          git config --global user.name '${{ github.actor }}'
+          git config --global user.email '${{ github.actor }}@users.noreply.github.com'
+          git add .bitmap
+          git diff --cached --exit-code --quiet || git commit -m "update .bitmap with new component versions (automated). --skip-ci"
+          git push

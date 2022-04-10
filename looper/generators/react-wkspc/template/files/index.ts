@@ -16,15 +16,11 @@ class Files {
     return data;
   }
 
-  public static async Generate(
-    context: WorkspaceContext
-  ): Promise<WorkspaceFile[]> {
-    Files.context = context;
+  public static async WorkspaceBase(): Promise<WorkspaceFile[]> {
     return [
-      // Workspace Base Files
       {
         relativePath: 'workspace.jsonc',
-        content: await workspaceConfig(context),
+        content: await workspaceConfig(Files.context),
       },
       {
         relativePath: '.gitignore',
@@ -38,7 +34,11 @@ class Files {
         relativePath: 'package.json',
         content: Files.Read('package-json'),
       },
-      // Storybook Files
+    ];
+  }
+
+  public static Storybook(): WorkspaceFile[] {
+    return [
       {
         relativePath: '.storybook/main.js',
         content: Files.Read('storybook/main'),
@@ -51,7 +51,11 @@ class Files {
         relativePath: '.storybook/preview-body.html',
         content: Files.Read('storybook/preview-body'),
       },
-      // Testing
+    ];
+  }
+
+  public static Testing(): WorkspaceFile[] {
+    return [
       {
         relativePath: '__mocks__/fileMock.ts',
         content: Files.Read('testing/file-mock'),
@@ -73,14 +77,14 @@ class Files {
         content: Files.Read('testing/jest-setup'),
       },
       {
-        relativePath: 'looper/storyshots/index.spec.ts',
+        relativePath: 'remote/storyshots/index.spec.ts',
         content: Files.Read('testing/storyshots'),
       },
-      // Scripts
-      {
-        relativePath: 'start.sh',
-        content: Files.Read('scripts/start-sh'),
-      },
+    ];
+  }
+
+  public static LintingFormatting(): WorkspaceFile[] {
+    return [
       // Linting
       {
         relativePath: '.eslintrc.js',
@@ -95,6 +99,72 @@ class Files {
         relativePath: '.prettierrc.js',
         content: Files.Read('formatting/prettier-rc'),
       },
+    ];
+  }
+
+  public static Scripts(): WorkspaceFile[] {
+    return [
+      {
+        relativePath: 'start.sh',
+        content: Files.Read('scripts/start-sh'),
+      },
+    ];
+  }
+
+  public static Actions(): WorkspaceFile[] {
+    return [
+      {
+        relativePath: '.github/issue_template/generic-template.md',
+        content: Files.Read('actions/generic-template'),
+      },
+      {
+        relativePath: '.github/workflows/bit-publish.yml',
+        content: Files.Read('actions/bit-publish'),
+      },
+      {
+        relativePath: '.github/workflows/health-check.yml',
+        content: Files.Read('actions/health-check'),
+      },
+      {
+        relativePath: '.github/workflows/pr-status.yml',
+        content: Files.Read('actions/pr-status'),
+      },
+      {
+        relativePath: '.github/pull_request_template.md',
+        content: Files.Read('actions/pr-template'),
+      },
+      {
+        relativePath: '.bit-status-desired.json',
+        content: Files.Read('actions/desired-status'),
+      },
+    ];
+  }
+
+  public static Providers(): WorkspaceFile[] {
+    return [
+      {
+        relativePath: `providers/${Files.context.name}-theme/index.ts`,
+        content: Files.Read('providers/theme/index'),
+      },
+      {
+        relativePath: `providers/${Files.context.name}-theme/${Files.context.name}-theme.tsx`,
+        content: Files.Read('providers/theme/theme'),
+      },
+    ];
+  }
+
+  public static async Generate(
+    context: WorkspaceContext
+  ): Promise<WorkspaceFile[]> {
+    Files.context = context;
+    return [
+      ...(await Files.WorkspaceBase()),
+      ...Files.Storybook(),
+      ...Files.Testing(),
+      ...Files.LintingFormatting(),
+      ...Files.Scripts(),
+      ...Files.Actions(),
+      ...Files.Providers(),
     ];
   }
 }
