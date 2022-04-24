@@ -19,4 +19,6 @@ tasks:
       bit install &&
       bit compile &&
       bit link &&
-      bit start
+      cd ../
+      bit new bitgen test-wkspc --aspect ashwanth1109.looper/generators/react-wkspc &&
+      cd test-wkspc
