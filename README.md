@@ -1,6 +1,6 @@
 # Bit Gen
 
-TODO: record similar video to demo here:
+TODO: record similar bitgen video to tiui demo here:
 https://drive.google.com/file/d/13UBZBZWEDeio6zRG2NPx7e7QRbCvzP8z/view?usp=sharing
 
 ## Create Workspace
