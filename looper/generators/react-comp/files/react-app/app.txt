@@ -1,0 +1,21 @@
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import AppContext from './TIUI_NAME.app-context';
+
+// Lazy load all routes
+const Home = React.lazy(() => import('@tiui/remote.pages.tiui.home'));
+const Login = React.lazy(() => import('@tiui/remote.pages.tiui.login'));
+
+export function TIUI_NAME_PASCAL_CASEApp() {
+  return (
+    <React.Suspense fallback={<div>Loading..</div>}>
+      <AppContext>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="*" element={<h1>Page Not found</h1>} />
+        </Routes>
+      </AppContext>
+    </React.Suspense>
+  );
+}

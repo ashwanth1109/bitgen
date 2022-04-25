@@ -1,0 +1,6 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+import { TIUI_NAME_PASCAL_CASEApp } from './app';
+
+ReactDOM.render(<TIUI_NAME_PASCAL_CASEApp />, document.getElementById('root'));

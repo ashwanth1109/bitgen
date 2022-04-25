@@ -4,10 +4,11 @@ import * as path from 'path';
 
 class Files {
   public static context: ComponentContext;
+  public static relativePath: string;
 
   public static Read(fileName: string): string {
     let data = fs.readFileSync(
-      path.resolve(__dirname, `./${fileName}.txt`),
+      path.resolve(__dirname, `./${Files.relativePath}${fileName}.txt`),
       'utf8'
     );
     data = data.replace(
@@ -18,8 +19,11 @@ class Files {
     return data;
   }
 
-  public static Generate(context: ComponentContext): ComponentFile[] {
+  public static GenerateReactComponentWithStory(
+    context: ComponentContext
+  ): ComponentFile[] {
     Files.context = context;
+    Files.relativePath = 'component-with-story';
     return [
       // Index file
       {
@@ -51,6 +55,45 @@ class Files {
       {
         relativePath: `${context.name}.stories.tsx`,
         content: Files.Read('dummy-stories'),
+      },
+    ];
+  }
+
+  public static GenerateReactApp(context: ComponentContext): ComponentFile[] {
+    Files.context = context;
+    Files.relativePath = 'react-app';
+
+    return [
+      // Index file
+      {
+        relativePath: 'index.ts',
+        isMain: true,
+        content: Files.Read('index'),
+      },
+      // Context file
+      {
+        relativePath: `${context.name}.app-context.tsx`,
+        content: Files.Read('tiui-app-context'),
+      },
+      // Docs file
+      {
+        relativePath: `${context.name}.docs.mdx`,
+        content: Files.Read('tiui-app-docs'),
+      },
+      // Command registrar
+      {
+        relativePath: `${context.name}.react-app.ts`,
+        content: Files.Read('tiui-app-react-app'),
+      },
+      // Root file - reactDOM.render
+      {
+        relativePath: `${context.name}.app-root.tsx`,
+        content: Files.Read('tiui-app-root'),
+      },
+      // App file
+      {
+        relativePath: `app.tsx`,
+        content: Files.Read('app'),
       },
     ];
   }

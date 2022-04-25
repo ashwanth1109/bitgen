@@ -1,0 +1,23 @@
+# TI UI App
+
+This a deployable component which composes all parts of the app.
+
+## Run Guide
+
+Your workspace should already contain the tiui-app runner enabled.
+
+```bash
+bit templates
+```
+
+You should see the following template listed.
+
+id | name
+--- | ---
+tiui.remote/TIUI_NAME-app | TIUI_NAME-app
+
+To run the app locally, run the following:
+
+```bash
+bit run TIUI_NAME-app
+```

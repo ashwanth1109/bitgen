@@ -19,9 +19,14 @@ export class ReactCompMain {
 
     generator.registerComponentTemplate([
       {
-        name: 'react-comp',
-        description: 'Custom generator react component',
-        generateFiles: Files.Generate,
+        name: 'react-story',
+        description: 'Custom generator for react component',
+        generateFiles: Files.GenerateReactComponentWithStory,
+      },
+      {
+        name: 'react-app',
+        description: 'Custom generator for react app',
+        generateFiles: Files.GenerateReactApp,
       },
     ]);
 

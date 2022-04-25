@@ -1,0 +1,1 @@
+export { TIUI_NAME_PASCAL_CASEApp } from './app';
