@@ -1,14 +1,16 @@
 import { ComponentContext, ComponentFile } from '@teambit/generator';
 import * as fs from 'fs';
 import * as path from 'path';
+import Logger from '@ashwanth1109/looper.utils.logger';
 
 class Files {
   public static context: ComponentContext;
   public static relativePath: string;
 
   public static Read(fileName: string): string {
+    Logger.Info(`Generating file ${fileName}`);
     let data = fs.readFileSync(
-      path.resolve(__dirname, `./${Files.relativePath}${fileName}.txt`),
+      path.resolve(__dirname, `./${Files.relativePath}/${fileName}.txt`),
       'utf8'
     );
     data = data.replace(

@@ -24,7 +24,7 @@ export class ReactCompMain {
         generateFiles: Files.GenerateReactComponentWithStory,
       },
       {
-        name: 'react-app',
+        name: 'app-with-s3',
         description: 'Custom generator for react app',
         generateFiles: Files.GenerateReactApp,
       },

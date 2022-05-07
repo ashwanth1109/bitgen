@@ -9,6 +9,18 @@
  */
 
 {
+    "apps/bitgen": {
+        "scope": "",
+        "version": "",
+        "mainFile": "index.ts",
+        "rootDir": "looper/apps/bitgen",
+        "nextVersion": {
+            "version": "patch",
+            "message": "add logger, minor changes in comp, wkspc",
+            "username": "Ashwanth A R",
+            "email": "ashwanth1109@gmail.com"
+        }
+    },
     "envs/bitgen-react": {
         "scope": "ashwanth1109.looper",
         "version": "0.0.2",
@@ -23,15 +35,27 @@
     },
     "generators/react-comp": {
         "scope": "ashwanth1109.looper",
-        "version": "0.0.3",
+        "version": "0.0.4",
         "mainFile": "index.ts",
-        "rootDir": "looper/generators/react-comp"
+        "rootDir": "looper/generators/react-comp",
+        "nextVersion": {
+            "version": "patch",
+            "message": "add logger, minor changes in comp, wkspc",
+            "username": "Ashwanth A R",
+            "email": "ashwanth1109@gmail.com"
+        }
     },
     "generators/react-wkspc": {
         "scope": "ashwanth1109.looper",
         "version": "0.0.7",
         "mainFile": "index.ts",
-        "rootDir": "looper/generators/react-wkspc"
+        "rootDir": "looper/generators/react-wkspc",
+        "nextVersion": {
+            "version": "patch",
+            "message": "add logger, minor changes in comp, wkspc",
+            "username": "Ashwanth A R",
+            "email": "ashwanth1109@gmail.com"
+        }
     },
     "linter": {
         "scope": "ashwanth1109.looper",
@@ -44,6 +68,18 @@
         "version": "0.0.2",
         "mainFile": "index.ts",
         "rootDir": "looper/ui/dummy"
+    },
+    "utils/logger": {
+        "scope": "",
+        "version": "",
+        "mainFile": "index.ts",
+        "rootDir": "looper/utils/logger",
+        "nextVersion": {
+            "version": "patch",
+            "message": "add logger, minor changes in comp, wkspc",
+            "username": "Ashwanth A R",
+            "email": "ashwanth1109@gmail.com"
+        }
     },
     "$schema-version": "14.9.0"
 }
