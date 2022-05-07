@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import { BitgenApp } from './app';
 
-ReactDOM.render((
+ReactDOM.render(
   <BrowserRouter>
     <BitgenApp />
-  </BrowserRouter>
-), document.getElementById('root'));
-
+  </BrowserRouter>,
+  document.getElementById('root')
+);

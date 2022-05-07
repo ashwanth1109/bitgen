@@ -4,8 +4,8 @@ export const BitgenApp: ReactAppOptions = {
   name: 'bitgen',
   entry: [require.resolve('./bitgen.app-root')],
   prerender: {
-    routes: ['/']
-  }
+    routes: ['/'],
+  },
 };
 
 export default BitgenApp;
