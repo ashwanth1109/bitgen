@@ -7,7 +7,7 @@
     "test": "jest",
     "test:watch": "jest --watchAll",
     "lint": "eslint looper --ext .ts,.tsx -c .eslintrc.js",
-    "lint:q": "eslint looper --ext .ts,.tsx --quiet",
+    "lint:quiet": "eslint looper --ext .ts,.tsx --quiet",
     "format:check": "prettier --check looper --config .prettierrc.js",
     "format": "prettier --write looper --config .prettierrc.js"
   }

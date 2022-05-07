@@ -11,7 +11,7 @@
 {
     "apps/bitgen": {
         "scope": "ashwanth1109.looper",
-        "version": "0.0.1",
+        "version": "0.0.2",
         "mainFile": "index.ts",
         "rootDir": "looper/apps/bitgen"
     },
@@ -35,7 +35,7 @@
     },
     "generators/react-wkspc": {
         "scope": "ashwanth1109.looper",
-        "version": "0.0.8",
+        "version": "0.0.9",
         "mainFile": "index.ts",
         "rootDir": "looper/generators/react-wkspc"
     },

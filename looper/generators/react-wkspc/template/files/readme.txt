@@ -1,4 +1,4 @@
-# Welcome to your Workspace
+# Welcome to your BitGen Workspace
 
 This workspace uses [Bit](https://bit.dev/) to manage component packaging and distribution and [Storybook](https://storybook.js.org/) for tooling around component testing.
 
@@ -24,27 +24,26 @@ bit start
 
 4. Creating your first component. Create a new branch, and then
 ```bash
-bit create react-component -s tiui.looper -n <your namespace> <component name>
+bit create react-story -s <your-scope> -n <your namespace> <component name>
+
+5. Create your app with s3 deployment.
+```bash
+bit create app-with-s3 -s <your-scope> -n <your namespace> <app name>
 ```
-Follow this naming convention for the namespace
-- For components that are product specific start the namespace with the product name eg: gfi/ui/
-- For components that can be used across the org, omit the product name eg ui/
-- Use `ui` for building block components and `pages` when you build pages that are composed of other components. eg, login is a page component, header is a ui component.
-This will create a component with hello world code. Ensure that you can see the new component on the bit web app from step #3
-5. Add a story
-- Follow the examples from other components in the template and create a .stories.ts file with a simple hello world story for your component
-- Ensure that the stor is visible on the storybook web app.
-6. Once you're done building and testing your component, **soft tag it**
+
 ```bash
 bit status
 bit tag <component-id> --soft -m <message>
+
+# component-id => ui/button, pages/login etc.
+# message => eg 'Added new backward compatible feature to control color' etc.
+
 # OR if there are multiple components to tag with the same comment.
 bit tag --all --soft
 ```
 
-# component-id => ui/button, pages/login etc.
-# message => eg 'Added new backward compatible feature to control color' etc.
-6. Commit the changes in the `.bitmap` file
+6. Commit the changes in the `.bitmap` file.
+
 7. Raise a PR. When the branch is merged the CI will publish the component to npm and bit
 
 ## Storybook
@@ -59,63 +58,28 @@ pnpm storybook
 pnpm test
 ```
 
-## Building your components
+## Linting and Formatting
 
-```bash
-bit build --all
+The newly created bit workspace comes with a linter and formatter.
 
-# Single component
-bit build providers/error-boundary
+You can run lint in two modes - lint and lint:quiet (disable reporting on warnings)
+
+```shell
+pnpm lint
 ```
 
-## Running the linter
-
-```bash
-pnpm lint # show errors and warnings
-pnpm lint:q # show only errors
+```shell
+pnpm lint:quiet
 ```
 
-## Removing a component
+You can run format in two modes - format and format:check
 
-```bash
-bit remove <component> # e.g. bit remove ui/button
-
-# to remove from looper
-bit remove <component> --looper
-
-## Resolving incompatibilities between bit and npm
-This command gives you a list of npm packages and their versions
-```bash
-for i in `npm search --registry https://ti-npm.stage2.cnu-tu.ey.io --json -l --searchlimit=500 @tiui | jq '.[].name' |tr -d "\""`; do MYVAR=`npm view $i versions | sed -e "s/'/\"/g"`; echo "{ \"name\": \"$i\", \"versions\": $MYVAR },"; done
+```shell
+pnpm format
 ```
 
-This command will give you a list of bit components and versions
-```bash
-bit list -j
+```shell
+pnpm format:check
 ```
 
-Take the output of both and create a json as follows
-`
-{
-  "npm": [ <npm output> ],
-  "bit": [ <bit output ]
-}
-`
-
-Then you can run this jsonata on it
-```
-$map(bit, function($x, $i) {(
-    $npmname := "@tiui/" & $x.id.$substringAfter("tiui.").$replace("/", ".");
-    $npmversions := $.npm[name=$npmname].versions;
-    {
-        "npm_name": $npmname,
-        "npm_latest_version": $npmversions[-1],
-        "bit_version": $x.currentVersion,
-        "bit_local_version": $x.localVersion,
-        "unpublish_command": ($not($x.$npmversions[-1] = $x.currentVersion)) ? "npm unpublish " & $npmname & "@" & $npmversions[-1]
-    };
-)})
-```
-
-For components where the npm version is higher than the bit version, use the unpublish command to delete it from npm.
-You can get all the unpublish commands in one list by appending `.unpublish_command` to that jsonata function above.
+The linter and formatter are versioned and is pointing to latest. So, any time there is a central update to these versions, bit install should automatically update the linter and formatter.
