@@ -4,7 +4,9 @@ Internal Demo: https://drive.google.com/file/d/1BLP-4sI1JVebuZ-V5GkJkgUNQ2ydPRhc
 
 ## What is BitGen?
 
-BitGen is a generator that creates an opinionated, batteries-included bit workspace for building atomic frontends. A BitGen workspace has a React application (basic auth flow) out of the box with all the necessary dev tooling like linting, formatting, automated snapshot testing with storyshots etc.
+BitGen is a generator that creates an opinionated, batteries-included bit workspace for building atomic frontends. Why Atomic? The workspace prescribes a pattern of building an application with principles from [Atomic Design](https://www.youtube.com/watch?v=Yi-A20x2dcA).
+
+A BitGen workspace has a React application (basic auth flow) out of the box with all the necessary dev tooling like linting, formatting, automated snapshot testing with storyshots etc.
 
 ![BitGen Workspace](./assets/bitgen-workspace.png)
 
