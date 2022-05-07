@@ -9,9 +9,15 @@
  */
 
 {
-    "envs/bitgen-react": {
+    "apps/bitgen": {
         "scope": "ashwanth1109.looper",
         "version": "0.0.1",
+        "mainFile": "index.ts",
+        "rootDir": "looper/apps/bitgen"
+    },
+    "envs/bitgen-react": {
+        "scope": "ashwanth1109.looper",
+        "version": "0.0.2",
         "mainFile": "index.ts",
         "rootDir": "looper/envs/bitgen-react"
     },
@@ -23,13 +29,13 @@
     },
     "generators/react-comp": {
         "scope": "ashwanth1109.looper",
-        "version": "0.0.2",
+        "version": "0.0.5",
         "mainFile": "index.ts",
         "rootDir": "looper/generators/react-comp"
     },
     "generators/react-wkspc": {
         "scope": "ashwanth1109.looper",
-        "version": "0.0.6",
+        "version": "0.0.8",
         "mainFile": "index.ts",
         "rootDir": "looper/generators/react-wkspc"
     },
@@ -41,9 +47,15 @@
     },
     "ui/dummy": {
         "scope": "ashwanth1109.looper",
-        "version": "0.0.1",
+        "version": "0.0.2",
         "mainFile": "index.ts",
         "rootDir": "looper/ui/dummy"
+    },
+    "utils/logger": {
+        "scope": "ashwanth1109.looper",
+        "version": "0.0.1",
+        "mainFile": "index.ts",
+        "rootDir": "looper/utils/logger"
     },
     "$schema-version": "14.9.0"
 }

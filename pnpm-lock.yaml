@@ -43,6 +43,7 @@ importers:
       prettier: 2.6.2
       react: 17.0.2
       react-dom: 17.0.2
+      react-router-dom: 6.3.0
       styled-components: 5.3.5
       typescript: 4.6.2
     dependencies:
@@ -80,6 +81,7 @@ importers:
       prettier: registry.npmjs.org/prettier/2.6.2
       react: registry.npmjs.org/react/17.0.2
       react-dom: registry.npmjs.org/react-dom/17.0.2_react@17.0.2
+      react-router-dom: registry.npmjs.org/react-router-dom/6.3.0_react-dom@17.0.2+react@17.0.2
       styled-components: registry.npmjs.org/styled-components/5.3.5_react-dom@17.0.2+react@17.0.2
       typescript: registry.npmjs.org/typescript/4.6.2
     devDependencies:
@@ -88,6 +90,9 @@ importers:
       '@types/react': registry.npmjs.org/@types/react/17.0.43
       '@types/react-dom': registry.npmjs.org/@types/react-dom/17.0.14
       '@types/testing-library__jest-dom': registry.npmjs.org/@types/testing-library__jest-dom/5.9.5
+
+  looper/apps/bitgen:
+    specifiers: {}
 
   looper/configs/formatter:
     specifiers: {}

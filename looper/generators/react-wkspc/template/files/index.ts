@@ -140,18 +140,19 @@ class Files {
     ];
   }
 
-  public static Providers(): WorkspaceFile[] {
-    return [
-      {
-        relativePath: `providers/${Files.context.name}-theme/index.ts`,
-        content: Files.Read('providers/theme/index'),
-      },
-      {
-        relativePath: `providers/${Files.context.name}-theme/${Files.context.name}-theme.tsx`,
-        content: Files.Read('providers/theme/theme'),
-      },
-    ];
-  }
+  // TODO: Add support for providers
+  // public static Providers(): WorkspaceFile[] {
+  //   return [
+  //     {
+  //       relativePath: `providers/${Files.context.name}-theme/index.ts`,
+  //       content: Files.Read('providers/theme/index'),
+  //     },
+  //     {
+  //       relativePath: `providers/${Files.context.name}-theme/${Files.context.name}-theme.tsx`,
+  //       content: Files.Read('providers/theme/theme'),
+  //     },
+  //   ];
+  // }
 
   public static async Generate(
     context: WorkspaceContext
@@ -164,7 +165,7 @@ class Files {
       ...Files.LintingFormatting(),
       ...Files.Scripts(),
       ...Files.Actions(),
-      ...Files.Providers(),
+      // ...Files.Providers(),
     ];
   }
 }

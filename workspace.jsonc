@@ -40,6 +40,7 @@
     "policy": {
       "dependencies": {
         "@ashwanth1109/looper.providers.theme": "0.0.1",
+        "react-router-dom": "6.3.0",
         "styled-components": "5.3.5"
       },
       "peerDependencies": {

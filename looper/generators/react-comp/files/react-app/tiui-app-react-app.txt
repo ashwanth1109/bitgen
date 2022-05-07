@@ -1,0 +1,30 @@
+import { ReactAppOptions, ReactDeployContext } from '@teambit/react';
+import cp from 'child_process';
+
+import { config } from 'dotenv';
+
+import Logger from '@tiui/remote.utilities.logger';
+
+config();
+
+// IMPORTANT NOTE: This deploy function has a system level dependency
+// on a properly configured AWS CLI. (note in case of CICD or DevSpaces usage)
+const deployFn = async (context: ReactDeployContext) => {
+  const { publicDir, capsule } = context;
+  if (!publicDir) throw new Error('publicDir is not defined');
+  const command = `aws s3 sync ${capsule.fs.getPath(publicDir)} s3://${
+    process.env.AWS_BUCKET
+  } --delete`;
+  cp.execSync(command, { stdio: 'pipe' });
+  Logger.Info(
+      '\n\n!--------------------------APP DEPLOYED--------------------------!\n\n'
+  );
+};
+
+export const TIUI_NAME_PASCAL_CASEApp: ReactAppOptions = {
+  name: 'TIUI_NAME-app',
+  entry: [require.resolve('./TIUI_NAME.app-root')],
+  deploy: deployFn,
+};
+
+export default TIUI_NAME_PASCAL_CASEApp;

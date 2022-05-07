@@ -1,0 +1,13 @@
+import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
+import { GfiTheme } from '@tiui/remote.gfi.providers.theme';
+
+const AppContext = ({ children }: { children: React.ReactNode }) => {
+  return (
+    <BrowserRouter>
+      <GfiTheme>{children}</GfiTheme>
+    </BrowserRouter>
+  );
+};
+
+export default AppContext;
