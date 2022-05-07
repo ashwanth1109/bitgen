@@ -10,16 +10,10 @@
 
 {
     "apps/bitgen": {
-        "scope": "",
-        "version": "",
+        "scope": "ashwanth1109.looper",
+        "version": "0.0.1",
         "mainFile": "index.ts",
-        "rootDir": "looper/apps/bitgen",
-        "nextVersion": {
-            "version": "patch",
-            "message": "add logger, minor changes in comp, wkspc",
-            "username": "Ashwanth A R",
-            "email": "ashwanth1109@gmail.com"
-        }
+        "rootDir": "looper/apps/bitgen"
     },
     "envs/bitgen-react": {
         "scope": "ashwanth1109.looper",
@@ -35,27 +29,15 @@
     },
     "generators/react-comp": {
         "scope": "ashwanth1109.looper",
-        "version": "0.0.4",
+        "version": "0.0.5",
         "mainFile": "index.ts",
-        "rootDir": "looper/generators/react-comp",
-        "nextVersion": {
-            "version": "patch",
-            "message": "add logger, minor changes in comp, wkspc",
-            "username": "Ashwanth A R",
-            "email": "ashwanth1109@gmail.com"
-        }
+        "rootDir": "looper/generators/react-comp"
     },
     "generators/react-wkspc": {
         "scope": "ashwanth1109.looper",
-        "version": "0.0.7",
+        "version": "0.0.8",
         "mainFile": "index.ts",
-        "rootDir": "looper/generators/react-wkspc",
-        "nextVersion": {
-            "version": "patch",
-            "message": "add logger, minor changes in comp, wkspc",
-            "username": "Ashwanth A R",
-            "email": "ashwanth1109@gmail.com"
-        }
+        "rootDir": "looper/generators/react-wkspc"
     },
     "linter": {
         "scope": "ashwanth1109.looper",
@@ -70,16 +52,10 @@
         "rootDir": "looper/ui/dummy"
     },
     "utils/logger": {
-        "scope": "",
-        "version": "",
+        "scope": "ashwanth1109.looper",
+        "version": "0.0.1",
         "mainFile": "index.ts",
-        "rootDir": "looper/utils/logger",
-        "nextVersion": {
-            "version": "patch",
-            "message": "add logger, minor changes in comp, wkspc",
-            "username": "Ashwanth A R",
-            "email": "ashwanth1109@gmail.com"
-        }
+        "rootDir": "looper/utils/logger"
     },
     "$schema-version": "14.9.0"
 }
